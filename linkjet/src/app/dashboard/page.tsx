@@ -110,7 +110,7 @@ function Page() {
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
               {links.map((link) => (
-                <HoverCard>
+                <HoverCard key={link.id}>
                   <HoverCardTrigger>
                     -{" "}
                     <Link
