@@ -33,7 +33,7 @@ export function LinkContextWrapper({
   const deleteLink = async (id: number) => {
     setLinks((l) => l.filter((i) => i.id !== id));
 
-    await fetch(`http://localhost:3000/api/link?id=${id}`, {
+    await fetch("/api/link?id=${id}", {
       method: "DELETE",
     });
   };
@@ -47,7 +47,7 @@ export function LinkContextWrapper({
     };
     setLinks((l) => [...l, link]);
 
-    const response = await fetch("http://localhost:3000/api/link", {
+    const response = await fetch("/api/link", {
       method: "POST",
       body: JSON.stringify({
         link: link,

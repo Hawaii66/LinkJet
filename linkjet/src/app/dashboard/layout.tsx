@@ -6,7 +6,7 @@ import React from "react";
 export const revalidate = 0;
 
 async function Layout({ children }: Children) {
-  const response = await fetch("http://localhost:3000/api/user/links?id=1");
+  const response = await fetch(`${process.env.API_ROUTE}/user/links?id=${1}`);
 
   const links: Link[] = await response.json();
 
