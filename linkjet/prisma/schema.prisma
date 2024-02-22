@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model links {
+  id         BigInt    @id @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
+  user_id    Int
+  url        String    @db.VarChar(512)
+  category   String?   @db.VarChar(100)
+  created_at DateTime? @default(now()) @db.Timestamp(0)
+}
